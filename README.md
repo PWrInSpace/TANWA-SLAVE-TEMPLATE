@@ -14,6 +14,6 @@ TANWA - filling, weighting, pressurizing and igniting system slave node template
 
 ## CAN TASK USAGE:
 
-There are two non-static freeRTOS queues - **RX_QUEUE** and **TX_QUEUE** in ***can_task.h*** file. You can use them to either push whatever message you want to be sent, or recieve messages
+There are two non-static freeRTOS queues - **RX_QUEUE** and **TX_QUEUE** in ***mcu_twai_config.h*** file. You can use them to either push whatever message you want to be sent, or recieve messages
 
 **CAUTION!** task responsible for message management (can task) shouldn't be busy with relatively long operations, any funtionality should be managed in different task (main task). Can task shall only listen for messages and send back answers.
