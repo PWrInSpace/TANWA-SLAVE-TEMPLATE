@@ -9,3 +9,22 @@
 /// This file contains declaration of the system console configuration, including initialization
 /// and available commands for debugging/testing purposes.
 ///===-----------------------------------------------------------------------------------------===//
+
+#ifndef PWRINSPACE_BOARD_CONFIG_H
+#define PWRINSPACE_BOARD_CONFIG_H
+
+#include "led_driver.h"
+
+typedef struct {
+    char board_name[32];
+    led_struct_t status_led;
+} board_config_t;
+
+extern board_config_t config;
+
+void board_config_init(void);
+
+#endif /* PWRINSPACE_BOARD_CONFIG_H */
+
+
+// RTR -> TEN SAM ID U MASTER I SLAVE BO RTR PRZEGRYWA WALKE O MIEJSCE!
