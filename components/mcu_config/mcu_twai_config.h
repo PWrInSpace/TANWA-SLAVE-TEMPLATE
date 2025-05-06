@@ -1,3 +1,5 @@
+#ifndef PWRINSPACE_MCU_TWAI_CONFIG_H_
+#define PWRINSPACE_MCU_TWAI_CONFIG_H_
 
 #include <stdint.h>
 #include <stdio.h>

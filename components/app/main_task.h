@@ -1,8 +1,0 @@
-#ifndef PWRINSPACE_MAIN_TASK_H
-#define PWRINSPACE_MAIN_TASK_H
-
-void main_task(void *arg);
-void main_task_init(void);
-void main_task_deinit(void);
-
-#endif //PWRINSPACE_CAN_TASK_H

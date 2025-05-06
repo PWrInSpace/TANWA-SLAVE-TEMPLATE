@@ -1,11 +1,15 @@
-#include "freeRTOS/FreeRTOS.h"
-#include "freeRTOS/task.h"
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+
+#include "esp_log.h"
+#include "esp_err.h"
 
 #include "board_config.h"
-#include "led_driver.h"
 #include "setup_task.h"
 
 #define TAG "APP"
+
+extern board_config_t config;
 
 void app_main(void) {
     
@@ -13,7 +17,10 @@ void app_main(void) {
 
     ESP_LOGI(TAG, "%s TANWA board starting", config.board_name);
     
-    setup_task_init();
+    if(setup_task_init() != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to initialize setup task");
+        return;
+    }
 
     while(1) {
         led_toggle(&(config.status_led));

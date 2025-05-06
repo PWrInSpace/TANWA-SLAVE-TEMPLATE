@@ -1,3 +1,6 @@
-idf_component_register(SRCS "console_config.c" "mcu_twai_config.c" "twai_network_example_slave_main.c"
-                    INCLUDE_DIRS "."
-                    REQUIRES cli hardware)
+idf_component_register(  SRC_DIRS "."
+                         INCLUDE_DIRS "."
+                         REQUIRES driver mcu_config hardware can cli )
+
+target_compile_options(${COMPONENT_LIB} PRIVATE "-Wno-format" "-Wall" "-Werror")
+

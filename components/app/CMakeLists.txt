@@ -1,2 +1,5 @@
-idf_component_register(SRCS "main_task.c" "can_task.c" "init_task.c" "twai_network_example_slave_main.c"
-                    INCLUDE_DIRS ".")
+idf_component_register(  SRC_DIRS "."
+                         INCLUDE_DIRS "."
+                         REQUIRES config can )
+
+target_compile_options(${COMPONENT_LIB} PRIVATE "-Wno-format" "-Wall" "-Werror")

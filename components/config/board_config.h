@@ -14,6 +14,7 @@
 #define PWRINSPACE_BOARD_CONFIG_H
 
 #include "led_driver.h"
+#include "esp_err.h"
 
 typedef struct {
     char board_name[32];
@@ -22,7 +23,7 @@ typedef struct {
 
 extern board_config_t config;
 
-void board_config_init(void);
+esp_err_t board_config_init(void);
 
 #endif /* PWRINSPACE_BOARD_CONFIG_H */
 
