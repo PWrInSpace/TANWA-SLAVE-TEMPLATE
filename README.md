@@ -8,12 +8,12 @@ TANWA - filling, weighting, pressurizing and igniting system slave node template
 * TWAI (CAN) bus filter - edit **TWAI_ACCEPTANCE_FILTER** and **TWAI_ACCEPTANCE_MASK** in ***Kconfig.projbuild*** file 
 * add hardware libraries, and hardware initialization in ***board_config.c*** and ***board_config.h*** files
 * add CAN message parsing in ***can_commands.c***
-* add main task loop
+* add functionality task/tasks
 * likely, add macros for twai struct creation
 * add configurations in existing files or add files specific for functionality (e.g. built-in adc configuration, spi configuration, etc...)
 
 ## CAN TASK USAGE:
 
-There are two non-static freeRTOS queues - **RX_QUEUE** and **TX_QUEUE** in ***mcu_twai_config.h*** file. You can use them to either push whatever message you want to be sent, or recieve messages
+There is a public function available to use: ***can_send_message***. It sends can message with specified id, payload and payload length. It can be used from any task.
 
-**CAUTION!** task responsible for message management (can task) shouldn't be busy with relatively long operations, any funtionality should be managed in different task (main task). Can task shall only listen for messages and send back answers.
+For recieving, every message id should have its own assigned callback, callbacks are registered using ***can_register_commands*** function. Callbacks are executed in the CAN listening task. There is no need for a separate task since, there exists an internal RX queue built in the twai driver.

@@ -15,6 +15,8 @@
 
 #include "console.h"
 #include "console_config.h"
+#include "board_config.h"
+#include "led_driver.h"
 
 #define TAG "CONSOLE_CONFIG"
 
@@ -30,8 +32,8 @@ int reset_device(int argc, char **argv) {
 
  static esp_console_cmd_t cmd [] = {
  // example command:
- // cmd     help description   hint  function      args
- {"reset", "Reset the device", NULL, reset_device, NULL},
+ // cmd     help description   hint  function      args  func_context context
+ {"reset", "Reset the device", NULL, reset_device, NULL, NULL,        NULL},
  };
 
 esp_err_t console_config_init() {

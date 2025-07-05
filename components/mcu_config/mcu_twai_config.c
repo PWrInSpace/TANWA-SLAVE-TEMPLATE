@@ -15,8 +15,8 @@ mcu_twai_config_t mcu_twai_config = {
     .mode = TWAI_MODE_NORMAL,
     .g_config = {
         .mode = TWAI_MODE_NORMAL,
-        .tx_io = CONFIG_CAN_TX_GPIO,
-        .rx_io = CONFIG_CAN_RX_GPIO,
+        .tx_io =  CONFIG_CAN_TX_GPIO,
+        .rx_io =  CONFIG_CAN_RX_GPIO,
         .clkout_io = TWAI_IO_UNUSED,
         .bus_off_io = TWAI_IO_UNUSED,
         .tx_queue_len = CONFIG_CAN_TX_QUEUE_LENGTH,
@@ -27,11 +27,10 @@ mcu_twai_config_t mcu_twai_config = {
     },
     .t_config = TWAI_TIMING_CONFIG_500KBITS(),
     .f_config = {
-        // set the proper filter configuration
         .acceptance_code = CONFIG_TWAI_ACCEPTANCE_CODE,
-        .acceptance_mask = CONFIG_TWAI_ACCEPTANCE_MASK,
+        .acceptance_mask = CONFIG_TWAI_ACCEPTANCE_MASK,  
         .single_filter = true,
-    },
+    }
 };
 
 esp_err_t mcu_twai_init() {

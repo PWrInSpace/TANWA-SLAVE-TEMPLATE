@@ -1,13 +1,13 @@
 ///===-----------------------------------------------------------------------------------------===//
 ///
 /// Copyright (c) PWr in Space. All rights reserved.
-/// Created: 27.01.2024 by Szymon Rzewuski
+/// Created: 06.05.2025 by Szymon Rzewuski
 ///
 ///===-----------------------------------------------------------------------------------------===//
 ///
 /// \file
-/// This file contains declaration of the system console configuration, including initialization
-/// and available commands for debugging/testing purposes.
+/// This file contains implementation of the system configuration including mcu config, can api config
+/// and hardware config to be implemented by user
 ///===-----------------------------------------------------------------------------------------===//
 
 #include "board_config.h"
@@ -35,7 +35,7 @@ board_config_t config = {
     .status_led = {
         ._gpio_set_level = _mcu_gpio_set_level,
         ._delay = _led_delay,
-        .gpio_num = CONFIG_GPIO_LED,
+        .gpio_num = LED_GPIO_INDEX,
         .drive = LED_DRIVE_POSITIVE,
         .state = LED_STATE_OFF, 
     },

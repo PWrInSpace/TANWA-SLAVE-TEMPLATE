@@ -76,7 +76,7 @@ esp_err_t can_send_message(uint32_t id, uint8_t *data, uint8_t length) {
 }
 
 esp_err_t can_register_commands(can_command_t *commands, size_t num_commands) {
-    if (commands == NULL || num_commands == 0) {
+    if (commands == NULL) {
         ESP_LOGE(TAG, "Invalid arguments");
         return ESP_ERR_INVALID_ARG;
     }

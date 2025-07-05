@@ -12,7 +12,7 @@ menu "TANWA BOARD CONFIGURATION"
             
             config SETUP_TASK_PRIORITY
                 int "Priority"
-                default 5
+                default 9
                 help
                     Priority for setup task.
 
@@ -34,13 +34,13 @@ menu "TANWA BOARD CONFIGURATION"
             
             config CAN_TASK_PRIORITY
                 int "Priority"
-                default 5
+                default 10
                 help
                     Priority for CAN task.
 
             config CAN_TASK_CORE_ID
                 int "Core ID"
-                default 0
+                default 1
                 help
                     Core ID for CAN task.
 
@@ -92,6 +92,12 @@ menu "TANWA BOARD CONFIGURATION"
             default 22
             help
                 GPIO number for TWAI TX pin.
+        
+        config CAN_STB_GPIO
+            int "CAN STB PIN"
+            default 37
+            help
+                GPIO number for CAN standby pin.
 
         config CAN_TX_QUEUE_LENGTH
             int "TX Queue Length"

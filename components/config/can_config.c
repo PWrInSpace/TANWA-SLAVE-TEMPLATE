@@ -11,7 +11,7 @@
 
 can_command_t can_commands[] = {
     // Example command registration
-    //{CAN_TEMPLATE_MESSAGE_ID, example_command_handler},
+    {CAN_TEMPLATE_MESSAGE_ID, example_command_handler},
     // Add your CAN commands here
 };
 
