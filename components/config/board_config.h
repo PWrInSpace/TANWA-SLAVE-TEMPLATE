@@ -6,8 +6,8 @@
 ///===-----------------------------------------------------------------------------------------===//
 ///
 /// \file
-/// This file contains declaration of the system console configuration, including initialization
-/// and available commands for debugging/testing purposes.
+/// This file contains declaration of the system configuration including mcu config, can api config
+/// and hardware config to be implemented by user
 ///===-----------------------------------------------------------------------------------------===//
 
 #ifndef PWRINSPACE_BOARD_CONFIG_H
