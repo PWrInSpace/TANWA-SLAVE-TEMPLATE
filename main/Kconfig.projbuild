@@ -83,13 +83,13 @@ menu "TANWA BOARD CONFIGURATION"
 
         config CAN_RX_GPIO
             int "TWAI RX PIN"
-            default 21
+            default 36
             help
                 GPIO number for TWAI RX pin.
         
         config CAN_TX_GPIO
             int "CAN TX PIN"
-            default 22
+            default 35
             help
                 GPIO number for TWAI TX pin.
         
@@ -101,13 +101,13 @@ menu "TANWA BOARD CONFIGURATION"
 
         config CAN_TX_QUEUE_LENGTH
             int "TX Queue Length"
-            default 10
+            default 50
             help
                 Length of the TX queue for CAN messages.
 
         config CAN_RX_QUEUE_LENGTH
             int "RX Queue Length"
-            default 10
+            default 50
             help
                 Length of the RX queue for CAN messages.
         

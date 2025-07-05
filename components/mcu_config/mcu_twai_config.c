@@ -27,10 +27,11 @@ mcu_twai_config_t mcu_twai_config = {
     },
     .t_config = TWAI_TIMING_CONFIG_500KBITS(),
     .f_config = {
+        // set the proper filter configuration
         .acceptance_code = CONFIG_TWAI_ACCEPTANCE_CODE,
-        .acceptance_mask = CONFIG_TWAI_ACCEPTANCE_MASK,  
+        .acceptance_mask = CONFIG_TWAI_ACCEPTANCE_MASK,
         .single_filter = true,
-    }
+    },
 };
 
 esp_err_t mcu_twai_init() {

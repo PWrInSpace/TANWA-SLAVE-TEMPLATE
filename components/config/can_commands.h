@@ -15,6 +15,7 @@ typedef enum {
 } can_message_id_t;
 
 /*PLACE YOUR FUNCTIONS ACCORDING TO THE TEMPLATE AND PUT THEIR IMMPLEMENTATION IN can_commands.c FILE
+
 * typedef esp_err_t (*can_command_handler_t)(uint8_t *data, uint8_t length);
 * 
 * REGISTER THEM IN can_config.c FILE
